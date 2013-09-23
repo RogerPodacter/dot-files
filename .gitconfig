@@ -21,3 +21,5 @@
 	email = tom.s.lehman@gmail.com
 [apply]
 	whitespace = nowarn
+[push]
+	default = simple

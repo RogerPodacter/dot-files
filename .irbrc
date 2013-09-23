@@ -99,7 +99,7 @@ if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
     ActiveRecord::Base.class_eval do
       def navigate(base = :local)
         raise "No path method" unless respond_to? :path
-        bases = { :local => 'http://localhost:3000', :rg => 'http://rapgenius.com' }
+        bases = { :local => "http://#{AppConfig.canonical_domain!}", :rg => 'http://rapgenius.com' }
         system("open", bases[base] + path)
       end
     end
@@ -161,8 +161,8 @@ def benchmark(trials = 10)
   puts "Average: #{((total_time / trials) * 1000).round}ms"
 end
 
-def copy(obj)
-  system %{echo -n '#{obj.to_s.gsub "'", "\\'"}' | pbcopy}
+def clip(obj)
+  IO.popen('pbcopy', 'w') { |f| f << obj.to_s }
 end
 
 def diff(new, old, options = {})
