@@ -1,3 +1,5 @@
+. "$HOME/.profile"
+
 source "$HOME/.rapgenius-db-backups-creds"
 source "$HOME/rails_apps/rapgenius/script/gc_env"
 
