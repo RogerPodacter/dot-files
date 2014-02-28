@@ -15,8 +15,8 @@ export EDITOR="mate -w"
 alias edit_profile='mate ~/.bash_profile'
 alias edit_irbrc='mate ~/.irbrc'
 
-alias edit_gmail_filters='mate ~/.gmail_filters.rb'
-alias compile_gmail_filters='ruby ~/.gmail_filters.rb > gmail_filters.xml'
+alias edit_gmail_filters='mate ~/bin/gmail_filters/gmail_filters.rb'
+alias compile_gmail_filters='ruby ~/bin/gmail_filters/gmail_filters.rb > ~/gmail_filters.xml'
 
 alias rg='cd ~/rails_apps/rapgenius'
 
@@ -105,7 +105,7 @@ alias rdr='rake db:rollback'
 alias rjw='rake jobs:work'
 alias rroutes='rake routes'
 alias mroutes='rroutes | mate'
-alias rmate='mate *.rb *.ru *.js Rakefile README* app config Gemfile* doc examples db lib lib_development Procfile public script spec test stories features vendor .gems .current_user .console_tools.rb'
+alias rmate='mate *.rb *.ru *.js Rakefile README* app config Gemfile* doc examples db lib lib_development Procfile public script spec test stories features vendor/plugins vendor/assets .gems .current_user .console_tools.rb'
 alias fmate='rmate && rmate && rmate && rmate'
 alias production='bin/production'
 alias staging='bin/staging'
